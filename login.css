@@ -1,0 +1,22 @@
+:root{
+   --cor-background: #43e08a;
+   --cor-clara: #fff;
+   --cor-escura: #8b8989;
+ }
+
+ *{
+    padding: 0;
+    margin: 0;  
+ }
+
+ .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: auto;
+    gap: 15px;
+ }
+
+
