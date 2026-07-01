@@ -1,0 +1,198 @@
+ :root{
+   --cor-background: #43e08a;
+   --cor-clara: #fff;
+   --cor-escura: #8b8989;
+ }
+
+ *{
+    padding: 0;
+    margin: 0;
+ }
+
+ body{
+    background-color: var(--cor-background);
+    font-family: Arial, sans-serif;
+    margin: 10px;
+ }
+
+ .titulo{
+    text-align: center;
+    color: var(--cor-clara);
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+ }
+
+ .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    width: auto;
+ }
+
+ #lista-contatos{
+    width: 42.5vw;
+    height: 90vh;
+    max-width: 75vw;
+    margin-left: 0;
+    background-color: var(--cor-clara);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+ }
+
+ .containter-contatos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+ }
+
+ .card-contato{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-wrap: wrap;
+ }
+
+ .card-contato:hover {
+    background-color: #e0e0e0; 
+}
+
+.info-contato {
+    display: flex;
+    flex-direction: column; /* Força a última mensagem a ficar EMBAIXO do nome */
+    margin-left: 12px;      /* Empurra o texto para não colar no avatar */
+}
+
+.avatar-placeholder {
+    width: 45px;
+    height: 45px;
+    background-color: #ccc; /* Cor cinza temporária */
+    border-radius: 50%;     /* Deixa a div perfeitamente redonda */
+    flex-shrink: 0;         /* Impede que o Flexbox esmague a bolinha */
+}
+
+.nome-contato {
+    font-weight: bold;
+    color: #333;
+}
+
+.ultima-msg {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+ /* Atualização do seu #conversa existente */
+#conversa {
+    display: flex;
+    flex-direction: column; /* Empilha: Header, Mensagens, Input */
+    background-color: #8b8989;
+    height: 90vh;
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden; /* Garante que os filhos não passem das bordas arredondadas */
+    position: relative;
+}
+
+/* Cabeçalho */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #7a7878; /* Um tom ligeiramente diferente para destacar */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 10px;
+}
+
+.chat-nome-contato {
+    font-weight: bold;
+    color: #fff;
+}
+
+.avatar-placeholder.small {
+    width: 35px;
+    height: 35px;
+}
+
+/* Área de Rolagem das Mensagens */
+.chat-mensagens {
+    flex: 1; /* Ocupa todo o espaço restante entre o header e o input */
+    padding: 20px;
+    overflow-y: auto; /* Ativa a barra de rolagem só aqui dentro quando houver muitas mensagens */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estrutura Base das Mensagens */
+.mensagem {
+    max-width: 60%; /* Impede que o balão ocupe a tela inteira */
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.texto-msg {
+    margin: 0;
+    color: #333;
+    word-wrap: break-word; /* Força quebra de linha se a palavra for muito longa */
+}
+
+.hora-msg {
+    font-size: 0.75rem;
+    color: #666;
+    align-self: flex-end; /* Joga a hora para o cantinho inferior direito do balão */
+    margin-top: 4px;
+}
+
+/* Alinhamento e cores específicas (Recebida vs Enviada) */
+.mensagem.recebida {
+    background-color: #ffffff;
+    align-self: flex-start; /* Alinha na esquerda */
+    border-top-left-radius: 0; /* Charme visual estilo WhatsApp */
+}
+
+.mensagem.enviada {
+    background-color: #d9fdd3; /* Aquele verde clássico de mensagem enviada */
+    align-self: flex-end;   /* Alinha na direita */
+    border-top-right-radius: 0;
+}
+
+/* Barra de Entrada de Texto */
+.chat-input-area {
+    display: flex;
+    padding: 15px;
+    background-color: #7a7878;
+    gap: 10px;
+}
+
+.input-msg {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.btn-enviar {
+    padding: 10px 20px;
+    background-color: #4caf50; /* Verde combinando com o tema do app */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-enviar:hover {
+    background-color: #45a049;
+   }
